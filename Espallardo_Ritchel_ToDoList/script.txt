@@ -1,0 +1,26 @@
+let todoList = [];
+
+const inputField = document.getElementById('add-btn');
+const taskList = document.querySelector('ul');
+const addButton = document.getElementById('add-btn');
+
+
+function addTask() {
+    const taskText = inputField.value.trim(); 
+
+    if (taskText) {
+        
+        const newTask = document.createElement('li');
+        newTask.textContent = taskText;
+
+       
+        taskList.appendChild(newTask);
+
+        
+        inputField.value = '';
+    } else {
+        alert('Please enter a task!'); 
+    }
+}
+
+addButton.addEventListener('click', addTask);
